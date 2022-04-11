@@ -1,0 +1,14 @@
+# ninja log v5
+12	749	1649670391615709996	CMakeFiles/hello.dir/example/person.cc.o	9ac2d6cc4a7636a1
+0	5193	1649322190888723365	arrow/CMakeFiles/arrow_example.dir/main.cpp.o	aa2a6af8afaea1df
+1	8398	1649224621130539176	CMakeFiles/hello.dir/arrow_exmaple.cc.o	c90d6f8e1be613d6
+287	353	1649670827866341120	hello	3589067b97d35b79
+0	21	1649672952682517482	build.ninja	3e5e4e51f2b1ff14
+1	749	1649670391615709996	CMakeFiles/hello.dir/main.cpp.o	d9fde80329e20141
+0	287	1649670827802340662	CMakeFiles/hello.dir/main.cc.o	d5521acda2c96a64
+0	3	0	clean	eeed73f4e9bc4bdb
+5193	5343	1649322191040722862	arrow/arrow_example	67f205212226974b
+1	17	1649672963250508997	CMakeFiles/hello.dir/db/db_impl_open.cc.o	90efb3c5307f81e0
+0	287	1649672963518508783	CMakeFiles/hello.dir/main.cc.o	d5521acda2c96a64
+1	299	1649672963534508771	CMakeFiles/hello.dir/example/person.cc.o	9ac2d6cc4a7636a1
+299	375	1649672963606508713	hello	9ab458174eb0ddb4
