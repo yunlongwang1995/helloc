@@ -1,0 +1,8 @@
+/home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/wangyunlong01/opt/clion-2021.3.3/bin/ninja/linux/ninja -G Ninja /home/wangyunlong01/newsql/cwork/hello
+-- Arrow_FOUND:1
+-- Arrow_version:8.0.0
+-- Arrow_include:
+-- Arrow_library:
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug
