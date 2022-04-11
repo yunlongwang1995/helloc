@@ -6,10 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"childIndexes" : 
-					[
-						1
-					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
@@ -17,21 +13,6 @@
 					},
 					"projectIndex" : 0,
 					"source" : ".",
-					"targetIndexes" : 
-					[
-						1
-					]
-				},
-				{
-					"build" : "arrow",
-					"jsonFile" : "directory-arrow-Debug-c346cb810a4b7d2319a9.json",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "3.21"
-					},
-					"parentIndex" : 0,
-					"projectIndex" : 0,
-					"source" : "arrow",
 					"targetIndexes" : 
 					[
 						0
@@ -44,26 +25,17 @@
 				{
 					"directoryIndexes" : 
 					[
-						0,
-						1
+						0
 					],
 					"name" : "hello",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
 			"targets" : 
 			[
-				{
-					"directoryIndex" : 1,
-					"id" : "arrow_example::@7d91296d7e29fd2dcd50",
-					"jsonFile" : "target-arrow_example-Debug-c78eeb61137aeb47051d.json",
-					"name" : "arrow_example",
-					"projectIndex" : 0
-				},
 				{
 					"directoryIndex" : 0,
 					"id" : "hello::@6890427a1f51a3e7e1df",
@@ -77,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug",
-		"source" : "/home/wangyunlong01/newsql/cwork/hello"
+		"build" : "/home/long/cwork/helloc/cmake-build-debug",
+		"source" : "/home/long/cwork/helloc"
 	},
 	"version" : 
 	{

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/hello.dir/main.cc.o CMakeFiles/hello.dir/example/person.cc.o CMakeFiles/hello.dir/db/db_impl_open.cc.o -o hello 

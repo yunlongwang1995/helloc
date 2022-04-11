@@ -4,14 +4,14 @@
 		"generator" : 
 		{
 			"multiConfig" : false,
-			"name" : "Ninja"
+			"name" : "Unix Makefiles"
 		},
 		"paths" : 
 		{
-			"cmake" : "/home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/bin/cmake",
-			"cpack" : "/home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/bin/cpack",
-			"ctest" : "/home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/bin/ctest",
-			"root" : "/home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21"
+			"cmake" : "/home/long/tool/clion-2021.3.4/bin/cmake/linux/bin/cmake",
+			"cpack" : "/home/long/tool/clion-2021.3.4/bin/cmake/linux/bin/cpack",
+			"ctest" : "/home/long/tool/clion-2021.3.4/bin/cmake/linux/bin/ctest",
+			"root" : "/home/long/tool/clion-2021.3.4/bin/cmake/linux/share/cmake-3.21"
 		},
 		"version" : 
 		{
@@ -26,7 +26,7 @@
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-6c995ba42ecc0e9d6849.json",
+			"jsonFile" : "codemodel-v2-b9771cfd3bff53de336d.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -35,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-faa81ce8ec7e6eafe198.json",
+			"jsonFile" : "cache-v2-123a59d63132892af8b2.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-63796542ecba1570db56.json",
+			"jsonFile" : "cmakeFiles-v1-2acb49ba29df59253799.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -66,7 +66,7 @@
 	{
 		"cache-v2" : 
 		{
-			"jsonFile" : "cache-v2-faa81ce8ec7e6eafe198.json",
+			"jsonFile" : "cache-v2-123a59d63132892af8b2.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -76,7 +76,7 @@
 		},
 		"cmakeFiles-v1" : 
 		{
-			"jsonFile" : "cmakeFiles-v1-63796542ecba1570db56.json",
+			"jsonFile" : "cmakeFiles-v1-2acb49ba29df59253799.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -86,7 +86,7 @@
 		},
 		"codemodel-v2" : 
 		{
-			"jsonFile" : "codemodel-v2-6c995ba42ecc0e9d6849.json",
+			"jsonFile" : "codemodel-v2-b9771cfd3bff53de336d.json",
 			"kind" : "codemodel",
 			"version" : 
 			{

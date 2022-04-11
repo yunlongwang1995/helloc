@@ -1,6 +1,3 @@
-/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/CMakeFiles/hello.dir
-/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/arrow/CMakeFiles/rebuild_cache.dir
-/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/arrow/CMakeFiles/edit_cache.dir
-/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/arrow/CMakeFiles/arrow_example.dir
+/home/long/cwork/helloc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/long/cwork/helloc/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/long/cwork/helloc/cmake-build-debug/CMakeFiles/hello.dir

@@ -13,6 +13,4 @@ add_executable(hello
 
         db/db_impl_open.cc)
 
-add_subdirectory(arrow)
-
 set(CMAKE_CXX_STANDARD 17)
