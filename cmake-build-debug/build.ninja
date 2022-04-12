@@ -74,31 +74,25 @@ build cmake_object_order_depends_target_hello: phony || CMakeFiles/hello.dir
 
 build CMakeFiles/hello.dir/main.cc.o: CXX_COMPILER__hello_Debug /home/wangyunlong01/newsql/cwork/hello/main.cc || cmake_object_order_depends_target_hello
   DEP_FILE = CMakeFiles/hello.dir/main.cc.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/hello.dir
   OBJECT_FILE_DIR = CMakeFiles/hello.dir
 
-build CMakeFiles/hello.dir/example/person.cc.o: CXX_COMPILER__hello_Debug /home/wangyunlong01/newsql/cwork/hello/example/person.cc || cmake_object_order_depends_target_hello
-  DEP_FILE = CMakeFiles/hello.dir/example/person.cc.o.d
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/hello.dir
-  OBJECT_FILE_DIR = CMakeFiles/hello.dir/example
-
 build CMakeFiles/hello.dir/db/db_impl_open.cc.o: CXX_COMPILER__hello_Debug /home/wangyunlong01/newsql/cwork/hello/db/db_impl_open.cc || cmake_object_order_depends_target_hello
   DEP_FILE = CMakeFiles/hello.dir/db/db_impl_open.cc.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/hello.dir
   OBJECT_FILE_DIR = CMakeFiles/hello.dir/db
 
 build CMakeFiles/hello.dir/db/zdb_local_impl.cc.o: CXX_COMPILER__hello_Debug /home/wangyunlong01/newsql/cwork/hello/db/zdb_local_impl.cc || cmake_object_order_depends_target_hello
   DEP_FILE = CMakeFiles/hello.dir/db/zdb_local_impl.cc.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/hello.dir
   OBJECT_FILE_DIR = CMakeFiles/hello.dir/db
 
 build CMakeFiles/hello.dir/db/zdb_rpc_impl.cc.o: CXX_COMPILER__hello_Debug /home/wangyunlong01/newsql/cwork/hello/db/zdb_rpc_impl.cc || cmake_object_order_depends_target_hello
   DEP_FILE = CMakeFiles/hello.dir/db/zdb_rpc_impl.cc.o.d
-  FLAGS = -g
+  FLAGS = -g -std=gnu++17
   OBJECT_DIR = CMakeFiles/hello.dir
   OBJECT_FILE_DIR = CMakeFiles/hello.dir/db
 
@@ -110,7 +104,7 @@ build CMakeFiles/hello.dir/db/zdb_rpc_impl.cc.o: CXX_COMPILER__hello_Debug /home
 #############################################
 # Link the executable hello
 
-build hello: CXX_EXECUTABLE_LINKER__hello_Debug CMakeFiles/hello.dir/main.cc.o CMakeFiles/hello.dir/example/person.cc.o CMakeFiles/hello.dir/db/db_impl_open.cc.o CMakeFiles/hello.dir/db/zdb_local_impl.cc.o CMakeFiles/hello.dir/db/zdb_rpc_impl.cc.o
+build hello: CXX_EXECUTABLE_LINKER__hello_Debug CMakeFiles/hello.dir/main.cc.o CMakeFiles/hello.dir/db/db_impl_open.cc.o CMakeFiles/hello.dir/db/zdb_local_impl.cc.o CMakeFiles/hello.dir/db/zdb_rpc_impl.cc.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/hello.dir
   POST_BUILD = :
@@ -119,7 +113,68 @@ build hello: CXX_EXECUTABLE_LINKER__hello_Debug CMakeFiles/hello.dir/main.cc.o C
   TARGET_PDB = hello.dbg
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/wangyunlong01/newsql/cwork/hello/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build examples/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/examples && /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/wangyunlong01/newsql/cwork/hello -B/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build examples/rebuild_cache: phony examples/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build examples/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/examples && /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build examples/edit_cache: phony examples/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target vector
+
+
+#############################################
+# Order-only phony target for vector
+
+build cmake_object_order_depends_target_vector: phony || examples/CMakeFiles/vector.dir
+
+build examples/CMakeFiles/vector.dir/vector_example.cc.o: CXX_COMPILER__vector_Debug /home/wangyunlong01/newsql/cwork/hello/examples/vector_example.cc || cmake_object_order_depends_target_vector
+  DEP_FILE = examples/CMakeFiles/vector.dir/vector_example.cc.o.d
+  FLAGS = -g -std=gnu++17
+  OBJECT_DIR = examples/CMakeFiles/vector.dir
+  OBJECT_FILE_DIR = examples/CMakeFiles/vector.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target vector
+
+
+#############################################
+# Link the executable examples/vector
+
+build examples/vector: CXX_EXECUTABLE_LINKER__vector_Debug examples/CMakeFiles/vector.dir/vector_example.cc.o
+  FLAGS = -g
+  OBJECT_DIR = examples/CMakeFiles/vector.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = examples/vector
+  TARGET_PDB = vector.dbg
+
+# =============================================================================
 # Target aliases.
+
+build vector: phony examples/vector
 
 # =============================================================================
 # Folder targets.
@@ -129,7 +184,14 @@ build hello: CXX_EXECUTABLE_LINKER__hello_Debug CMakeFiles/hello.dir/main.cc.o C
 #############################################
 # Folder: /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug
 
-build all: phony hello
+build all: phony hello examples/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/examples
+
+build examples/all: phony examples/vector
 
 # =============================================================================
 # Built-in targets
@@ -138,14 +200,14 @@ build all: phony hello
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../examples/CMakeLists.txt /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../examples/CMakeLists.txt /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################

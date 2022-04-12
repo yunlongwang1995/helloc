@@ -11,12 +11,12 @@
 namespace ZDB_NAMESPACE {
     Status ZEngine::Open(const ZOptions &options, const std::string &path, ZEngine **db) {
         if (options.isLocalDB) {
-            LocalDBOptions opt;
-            return ZObjectLocalDB::Open(opt, path, db);
+            LocalDBOptions opt(options);
+            return ZObjectLocalDB::Open(options, opt, path, db);
         }
 
-        RPCDBOptions opt;
-        return ZObjectRPCDB::Open(opt, path, db);
+        RPCDBOptions opt(options);
+        return ZObjectRPCDB::Open(options, opt, path, db);
     }
 }
 

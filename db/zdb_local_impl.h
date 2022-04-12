@@ -15,11 +15,11 @@
 namespace ZDB_NAMESPACE {
     class ZObjectLocalDB : public ZEngine {
     public:
-        ZObjectLocalDB() {};
+        ZObjectLocalDB(const ZOptions& zOptions, const LocalDBOptions& options);
 
-        ~ZObjectLocalDB() {};
+        ~ZObjectLocalDB();
 
-        static Status Open(const LocalDBOptions &options, const std::string &path, ZEngine **db);
+        static Status Open(const ZOptions& zOptions, const LocalDBOptions &options, const std::string &path, ZEngine **db);
 
         Status CreateTable(const ZObjectTable &table) override;
 
@@ -28,6 +28,8 @@ namespace ZDB_NAMESPACE {
         Status Read(const ZReadOptions &options) override;
 
     public:
+        const ZOptions& zOptions;
+        const LocalDBOptions& options;
         std::unique_ptr<ZTableManager> tableManager;
     };
 }

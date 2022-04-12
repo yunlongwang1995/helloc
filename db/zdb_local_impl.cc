@@ -7,13 +7,23 @@
 
 namespace ZDB_NAMESPACE {
 
-    Status ZObjectLocalDB::Open(const LocalDBOptions &options, const std::string& path, ZEngine **db) {
+    ZObjectLocalDB::ZObjectLocalDB(const ZOptions &zOptions, const LocalDBOptions &options) : zOptions(zOptions),
+                                                                                              options(options) {
+        this->tableManager = std::make_unique<ZTableManager>(zOptions);
+    }
+
+    ZObjectLocalDB::~ZObjectLocalDB() {
+
+    }
+
+    Status ZObjectLocalDB::Open(const ZOptions &zOptions, const LocalDBOptions &options, const std::string &path,
+                                ZEngine **db) {
         /**
          * create local DB
          */
 
         std::cout << "create local db, path: " << path << std::endl;
-        *db = new ZObjectLocalDB();
+        *db = new ZObjectLocalDB(zOptions, options);
         return Status();
     }
 
@@ -24,8 +34,9 @@ namespace ZDB_NAMESPACE {
 
         std::cout << "create a table, tableID: " << table.tableID << std::endl;
         this->tableManager.get()->tables.push_back(table);
-        for (MetaListener* listener : this->tableManager.get()->listeners){
-            listener->OnChange();
+        for (auto listener: this->tableManager.get()->listeners) {
+            MetaListener* l = reinterpret_cast<MetaListener*>(listener.get());
+            l->OnChange();
         }
 
         return Status();

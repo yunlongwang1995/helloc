@@ -7,13 +7,23 @@
 #include <cassert>
 #include "include/zdb/zengine.h"
 
-int main(int argc, char **argv) {
-    std::cout << "hello world" << std::endl;
+using namespace ZDB_NAMESPACE;
 
-    zdb::ZEngine *db;
+class MyListener : public MetaListener {
+public:
+    void OnChange() override {
+        std::cout << "this is my listener" << std::endl;
+    }
+};
+
+int main(int argc, char **argv) {
+
+    ZEngine *db;
     std::string path = "/tmp/ztable";
-    zdb::ZOptions options;
-    options.isLocalDB = false;
+    ZOptions options;
+    options.isLocalDB = true;
+    MyListener listener;
+    options.listeners.push_back(std::make_shared<MyListener>(listener));
 
     // open db
     zdb::Status s = zdb::ZEngine::Open(options, path, &db);
@@ -25,13 +35,13 @@ int main(int argc, char **argv) {
     db->CreateTable(table);
 
     // write
-    zdb::TableMetrics tm;
+    TableMetrics tm;
     tm.tableID = 23;
     s = db->Write(tm);
     assert(s.ok());
 
     // read
-    zdb::ZReadOptions zReadOptions;
+    ZReadOptions zReadOptions;
     s = db->Read(zReadOptions);
     assert(s.ok());
 

@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.21)
 project(hello)
 
+set(CMAKE_CXX_STANDARD 17)
+
 add_executable(hello
         main.cc
-        example/person.cc
 
         include/zdb/status.h
         include/zdb/zdb_namespace.h
@@ -17,6 +18,8 @@ add_executable(hello
         db/options.h
         db/zdb_local_impl.cc
         db/zdb_rpc_impl.h
-        db/zdb_rpc_impl.cc meta/default_listener.h db/ztable_manager.h)
+        db/zdb_rpc_impl.cc
+        meta/default_listener.h
+        db/ztable_manager.h)
 
-set(CMAKE_CXX_STANDARD 17)
+add_subdirectory(examples)

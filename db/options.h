@@ -12,10 +12,20 @@
 
 namespace ZDB_NAMESPACE {
     class LocalDBOptions {
+    public:
+        LocalDBOptions(const ZOptions &opt) {
 
+        }
+
+        std::vector<std::shared_ptr<MetaListener *>> listeners;
     };
 
     class RPCDBOptions {
+    public:
+        RPCDBOptions(const ZOptions &opt) {
 
+        }
+
+        std::vector<std::shared_ptr<MetaListener *>> listeners;
     };
 }

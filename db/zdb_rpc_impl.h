@@ -15,11 +15,11 @@
 namespace ZDB_NAMESPACE {
     class ZObjectRPCDB : public ZEngine {
     public:
-        ZObjectRPCDB() {};
+        ZObjectRPCDB(const ZOptions& zOptions, const RPCDBOptions& options);
 
-        ~ZObjectRPCDB() {};
+        ~ZObjectRPCDB();
 
-        static Status Open(const RPCDBOptions &options, const std::string &path, ZEngine **db);
+        static Status Open(const ZOptions& zOptions, const RPCDBOptions &options, const std::string &path, ZEngine **db);
 
         Status CreateTable(const ZObjectTable &table) override;
 
@@ -28,6 +28,8 @@ namespace ZDB_NAMESPACE {
         Status Read(const ZReadOptions &options) override;
 
     public:
+        const ZOptions& zOptions;
+        const RPCDBOptions& rpcOptions;
         std::unique_ptr<ZTableManager> tableManager;
     };
 };

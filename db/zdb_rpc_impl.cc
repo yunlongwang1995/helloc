@@ -7,13 +7,23 @@
 
 namespace ZDB_NAMESPACE {
 
-    Status ZObjectRPCDB::Open(const RPCDBOptions &options, const std::string& path, ZEngine **db) {
+    ZObjectRPCDB::ZObjectRPCDB(const ZOptions &zOptions, const RPCDBOptions &options) : zOptions(zOptions),
+                                                                                        rpcOptions(options) {
+        this->tableManager = std::make_unique<ZTableManager>(zOptions);
+    }
+
+    ZObjectRPCDB::~ZObjectRPCDB() {
+
+    }
+
+    Status
+    ZObjectRPCDB::Open(const ZOptions &zOptions, const RPCDBOptions &options, const std::string &path, ZEngine **db) {
         /**
          * create rpc DB
          */
 
         std::cout << "create rpc db, path: " << path << std::endl;
-        *db = new ZObjectRPCDB();
+        *db = new ZObjectRPCDB(zOptions, options);
         return Status();
     }
 
@@ -24,7 +34,7 @@ namespace ZDB_NAMESPACE {
 
         std::cout << "create a table, tableID: " << table.tableID << std::endl;
         this->tableManager.get()->tables.push_back(table);
-        for (MetaListener* listener : this->tableManager.get()->listeners){
+        for (auto listener: this->tableManager.get()->listeners) {
             listener->OnChange();
         }
         return Status();

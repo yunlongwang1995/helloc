@@ -16,6 +16,10 @@
 namespace ZDB_NAMESPACE {
     class ZOptions {
     public:
+        ZOptions(){
+//            listeners = std::vector<std::shared_ptr<MetaListener>>();
+        }
+
         bool isLocalDB;
         std::vector<std::shared_ptr<MetaListener>> listeners;
     };

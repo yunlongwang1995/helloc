@@ -1,3 +1,6 @@
 /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/CMakeFiles/hello.dir
+/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/examples/CMakeFiles/rebuild_cache.dir
+/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/examples/CMakeFiles/edit_cache.dir
+/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/examples/CMakeFiles/vector.dir

@@ -16,7 +16,15 @@
 namespace ZDB_NAMESPACE {
     class ZTableManager {
     public:
+        ZTableManager(const ZOptions& options) : listeners(options.listeners){
+
+        }
+
+        ~ZTableManager(){
+
+        }
+
         std::vector<ZObjectTable> tables;
-        std::vector<MetaListener*> listeners;
+        std::vector<std::shared_ptr<MetaListener>> listeners;
     };
 }
