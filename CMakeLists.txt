@@ -10,7 +10,13 @@ add_executable(hello
         include/zdb/zengine.h
         include/zdb/zoptions.h
         include/zdb/ztable.h
+        include/zdb/meta_listener.h
 
-        db/db_impl_open.cc)
+        db/db_impl_open.cc
+        db/zdb_local_impl.h
+        db/options.h
+        db/zdb_local_impl.cc
+        db/zdb_rpc_impl.h
+        db/zdb_rpc_impl.cc meta/default_listener.h db/ztable_manager.h)
 
 set(CMAKE_CXX_STANDARD 17)

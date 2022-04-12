@@ -1,4 +1,4 @@
-# Install script for directory: /home/long/cwork/helloc
+# Install script for directory: /home/wangyunlong01/newsql/cwork/hello
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/long/cwork/helloc/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/wangyunlong01/newsql/cwork/hello/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

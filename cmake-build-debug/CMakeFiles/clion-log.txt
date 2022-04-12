@@ -1,4 +1,4 @@
-/home/long/tool/clion-2021.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/long/cwork/helloc
+/home/wangyunlong01/opt/clion-2021.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/wangyunlong01/opt/clion-2021.3.3/bin/ninja/linux/ninja -G Ninja /home/wangyunlong01/newsql/cwork/hello
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/long/cwork/helloc/cmake-build-debug
+-- Build files have been written to: /home/wangyunlong01/newsql/cwork/hello/cmake-build-debug
