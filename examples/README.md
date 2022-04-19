@@ -7,3 +7,7 @@ smart_point_example.cc
 deconstruction_example.cc
 #4. Const
 const_example.cc
+#5. Thread
+thread_example.cc
+#6. IO
+io_example.cc
