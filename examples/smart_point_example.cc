@@ -4,6 +4,7 @@
 
 #include "common.h"
 #include <shared_mutex>
+#include <memory>
 
 using namespace std;
 
