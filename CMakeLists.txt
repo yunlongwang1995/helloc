@@ -6,3 +6,5 @@ add_executable(hello main.cc)
 add_subdirectory(examples)
 
 add_subdirectory(internal)
+
+add_subdirectory(data_strucure)
