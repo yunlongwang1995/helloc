@@ -8,3 +8,5 @@ add_subdirectory(examples)
 add_subdirectory(internal)
 
 add_subdirectory(data_strucure)
+
+add_subdirectory(util)
