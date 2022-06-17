@@ -11,7 +11,6 @@ using namespace std;
 
 // C++方式生成指定长度随机字符串
 string GenRandomString(int n) {
-    srand((unsigned)time(nullptr));                        //产生随机化种子
     std::string str;
 
     for(int i=1; i<=n; i++) {
@@ -25,6 +24,9 @@ string GenRandomString(int n) {
 }
 
 int main() {
-    cout << GenRandomString(10) << endl;
+    srand(0);                        //产生随机化种子
+    for (int i=0; i<10; ++i) {
+        cout << GenRandomString(10) << endl;
+    }
 }
 
