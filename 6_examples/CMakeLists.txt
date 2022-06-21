@@ -1,6 +1,3 @@
-
-add_executable(vector_example vector_example.cc)
-
 add_executable(deconstruction_example deconstruction_example.cc)
 
 add_executable(smart_point_example smart_point_example.cc)
@@ -13,7 +10,5 @@ add_executable(thread_example thread_example.cc)
 add_executable(io_example io_example.cc)
 
 add_executable(lambda_example lambda_example.cc)
-
-add_executable(map_example map_example.cc)
 
 add_executable(move_example move_example.cc)

@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <queue>
 
 class TNode {
 public:
@@ -61,6 +62,27 @@ void PostorderTraversal(TNode* root) {
     std::cout << root->val << "  ";
 }
 
+// 广度遍历
+void bfs(TNode* root) {
+    if (!root) {
+        return;
+    }
+
+    std::queue<TNode*> queue;
+    queue.push(root);
+    while (!queue.empty()) {
+        TNode* head = queue.front();
+        if (head->left) {
+            queue.push(head->left);
+        }
+        if (head->right) {
+            queue.push(head->right);
+        }
+        std::cout << head->val << "  ";
+        queue.pop();
+    }
+}
+
 int main() {
     TNode n1(1);
     TNode n2(2);
@@ -81,5 +103,8 @@ int main() {
 
     std::cout << std::endl << "后序遍历" << std::endl;
     PostorderTraversal(&n3);
+
+    std::cout << std::endl << "广度遍历" << std::endl;
+    bfs(&n3);
 }
 
