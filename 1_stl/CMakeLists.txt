@@ -6,6 +6,9 @@ add_executable(forward_list 1_5_forward_list.cc)
 
 add_executable(map 2_1_map.cc)
 add_executable(multimap 2_2_multimap.cc)
+add_executable(unordered_map 2_3_unordered_map.cc)
+add_executable(unordered_multimap 2_4_unordered_multimap.cc)
+
 add_executable(set 3_1_set.cc)
 
 add_executable(queue 4_1_queue.cc)
