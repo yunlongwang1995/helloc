@@ -22,5 +22,13 @@ int main(int argc, char **argv) {
 
     cout << endl;
     cout << values[100] << endl;     // 不抛异常
-    cout << values.at(4) << endl;  // 抛 std::out_of_range 异常
+    cout << values.at(3) << endl;  // 抛 std::out_of_range 异常
+
+    cout << endl << "删除" << endl;
+    values.erase(++values.begin());
+
+    cout << "正向遍历： ";
+    for (auto item: values) {
+        cout << item << "  ";
+    }
 }
