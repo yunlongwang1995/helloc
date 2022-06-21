@@ -1,3 +1,4 @@
+add_executable(array 1_0_array.cc)
 add_executable(vector 1_1_vector.cc)
 add_executable(list 1_2_list.cc)
 
