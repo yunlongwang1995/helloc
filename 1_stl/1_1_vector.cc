@@ -7,30 +7,20 @@
 
 using namespace std;
 
-// print point of vector
-void printPrt(int* in);
-
-// case1: copy
-void testCopy();
-
 int main(int argc, char **argv) {
-    testCopy();
+    // 初始化
+    vector<int> values;
+    values.push_back(1);
+    values.insert(values.begin(), 2);
+    values.insert(values.begin(), 3);
+    values.push_back(4);
+
+    cout << "正向遍历： ";
+    for (auto item: values) {
+        cout << item << "  ";
+    }
+
+    cout << endl;
+    cout << values[100] << endl;     // 不抛异常
+    cout << values.at(4) << endl;  // 抛 std::out_of_range 异常
 }
-
-// case1: copy
-void testCopy(){
-    vector<int> l1;
-    l1.push_back(1);
-    l1.push_back(2);
-    l1.push_back(3);
-    vector<int> l2 = l1;
-
-    printPrt(&l1[0]);
-    printPrt(&l2[0]);
-}
-
-void printPrt(int* in) {
-    printf("%u\n", in);
-}
-
-
