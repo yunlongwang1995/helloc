@@ -10,5 +10,16 @@ add_executable(unordered_map 2_3_unordered_map.cc)
 add_executable(unordered_multimap 2_4_unordered_multimap.cc)
 
 add_executable(set 3_1_set.cc)
+add_executable(multiset 3_2_multiset.cc)
+add_executable(unordered_set 3_3_unordered_set.cc)
+add_executable(unordered_multiset 3_4_unordered_multiset.cc)
 
 add_executable(queue 4_1_queue.cc)
+add_executable(priority_queue 4_2_priority_queue.cc)
+add_executable(stack 4_3_stack.cc)
+
+add_executable(reverse_iterator 6_1_reverse_iterator.cc)
+add_executable(inserter_iterator 6_2_inserter_iterator.cc)
+
+add_executable(lower_bound algorithm/01_lower_bound.cc)
+add_executable(upper_bound algorithm/02_upper_bound.cc)
