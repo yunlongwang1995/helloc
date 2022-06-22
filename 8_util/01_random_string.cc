@@ -2,7 +2,6 @@
 // Created by wangyunlong01 on 2022/6/17.
 //
 
-#include<ctime>
 #include<cstdlib>
 #include<string>
 #include<iostream>
