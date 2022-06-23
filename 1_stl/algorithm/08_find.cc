@@ -32,7 +32,7 @@ int main() {
     }
 
     // find_if
-    vector<int> values = {4,2,3,1,5};
+    vector<int> values = {4,2,3,1,5,3,1};
     auto it = find_if(values.begin(), values.end(), isOddNumber);
     if (it != values.end()) {
         cout << "first odd number: " << *it << endl;
@@ -50,5 +50,9 @@ int main() {
     if (it3 != values.end()) {
         cout << "last sub array position: " << it3 - values.begin() << endl;
     }
+
+    // find_first_of
+
+    // adjacent_find
 
 }

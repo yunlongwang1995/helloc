@@ -4,7 +4,7 @@
 
 /**
  * 目录:
- * partial_sort
+ * partial_sort: 数组的一部分排序
  * partial_sort_copy
  *
  * 均采用堆排序

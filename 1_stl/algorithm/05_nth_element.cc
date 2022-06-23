@@ -4,7 +4,7 @@
 
 /**
  * 目录:
- * nth_element
+ * nth_element：第 n 大（小）的数据在数组的第 n 个位置.
  * 时间复杂度：O(n)
  */
 

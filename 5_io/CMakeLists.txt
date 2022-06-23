@@ -1,1 +1,1 @@
-add_executable(io io.cc)
+add_executable(io 1_file_write_read.cc)
