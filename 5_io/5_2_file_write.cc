@@ -8,10 +8,13 @@ using namespace std;
 
 int main() {
     fstream myFile;
-    myFile.open("kafka.txt", ios::in|ios::out);
+    myFile.open("kafka.txt", ios::out | ios::app);
     if (myFile.is_open()) {
         cout << "file is opened" << endl;
-        myFile << "hello kafka.txt\n";
+        myFile << "hello c++\n";
+        myFile << "this is second line\n";
+        myFile.flush();   // flush to page cache
+        myFile.sync();    // sync data from page cache to disk
         myFile.close();
     }
 }

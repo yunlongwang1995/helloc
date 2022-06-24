@@ -20,6 +20,8 @@ add_executable(stack 4_3_stack.cc)
 
 add_executable(reverse_iterator 6_1_reverse_iterator.cc)
 add_executable(inserter_iterator 6_2_inserter_iterator.cc)
+add_executable(istream_iterator 6_3_istream_iterator.cc)
+add_executable(ostream_iterator 6_4_ostream_iterator.cc)
 
 add_executable(lower_bound algorithm/01_lower_bound.cc)
 add_executable(upper_bound algorithm/02_upper_bound.cc)
