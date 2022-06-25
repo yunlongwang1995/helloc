@@ -12,14 +12,20 @@
 #include <iostream>
 using namespace std;
 
-void QuickSort(int arr[], int left, int right) {
+/**
+ *
+ * @param arr
+ * @param cLeft   左边界（包含）
+ * @param cRight  右边界（包含）
+ */
+void QuickSort(int arr[], int cLeft, int cRight) {
     // 基准条件
-    if (left >= right) {
+    if (cLeft >= cRight) {
         return;
     }
 
-    int leftBound = left;
-    int rightBound = right;
+    int left = cLeft;
+    int right = cRight;
 
     // 分区排序
     int base = arr[left];
@@ -36,8 +42,8 @@ void QuickSort(int arr[], int left, int right) {
     }
     arr[left] = base;
 
-    QuickSort(arr, leftBound, left - 1);
-    QuickSort(arr, left+1, rightBound);
+    QuickSort(arr, cLeft, left - 1);
+    QuickSort(arr, left+1, cRight);
 }
 
 int main() {
