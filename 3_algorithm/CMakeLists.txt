@@ -4,3 +4,4 @@ add_executable(heap_sort 03_heap_sort.cc)
 
 add_executable(two_operand_sum leetcode/002_two_operand_sum.cc)
 add_executable(max_norepeated_substring_length leetcode/003_max_norepeated_substring_length.cc)
+add_executable(longest_palindrome leetcode/005_longest_palindrome.cc)
