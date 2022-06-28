@@ -14,3 +14,4 @@ add_executable(remove_last_nth_node_in_list leetcode/019_remove_last_nth_node_in
 add_executable(gen_brackets leetcode/022_gen_brackets.cc)
 add_executable(merge_k_lists leetcode/023_merge_k_lists.cc)
 add_executable(reverse_k_group leetcode/025_reverse_k_group.cc)
+add_executable(find_substring leetcode/030_find_substring.cc)
