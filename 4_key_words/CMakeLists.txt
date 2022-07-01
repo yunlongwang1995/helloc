@@ -10,5 +10,7 @@ add_executable(less_greater 1_5_less_greater.cc)
 add_executable(lambda 2_1_lambda.cc)
 add_executable(smart_point 2_2_smart_point.cc)
 
+add_executable(size_of 8_1_sizeof.cc)
+
 
 
