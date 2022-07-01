@@ -11,6 +11,7 @@ add_executable(lambda 2_1_lambda.cc)
 add_executable(smart_point 2_2_smart_point.cc)
 
 add_executable(size_of 8_1_sizeof.cc)
+add_executable(two_dimensional_array 8_2_two_dimensional_array.cc)
 
 
 

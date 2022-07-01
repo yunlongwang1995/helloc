@@ -34,4 +34,9 @@ int main() {
 
     // 5. sub_str
     cout << "sub_str: " << (val.substr(0, 2) == "((") << endl;
+
+    // 6. replace
+    val = ".....";
+    val.replace(3, 1, "Q");
+    cout << val << endl;
 }
