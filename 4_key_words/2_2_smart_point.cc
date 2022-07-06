@@ -2,39 +2,24 @@
 // Created by wangyunlong01 on 2022/4/13.
 //
 
-#include "common.h"
+#include "../common.h"
 #include <memory>
 
-using namespace std;
-
-void funcPoint();
-
-int main(int argc, char **argv) {
-    funcPoint();
-
-    shared_ptr<Animal> dog;
-
-    {
-        Dog *dog1 = new Dog("111");
-        dog = make_shared<Dog>(*dog1);
+shared_ptr<Animal> ret(bool empty) {
+    if (empty) {
+        return nullptr;
     }
 
+    return make_shared<Dog>("333");
+}
+
+int main(int argc, char **argv) {
+    shared_ptr<Animal> dog;
+    dog = ret(true);
+
+//    {
+//        dog = make_shared<Dog>("222");
+//    }
+
     dog->sayHello();
-}
-
-int add(int a, int b) {
-    return a + b;
-}
-
-int sub(int a, int b) {
-    return a - b;
-}
-
-void funcPoint() {
-    int (*fp)(int, int);
-    fp = add;
-    cout << fp(2, 1) << endl;
-
-    fp = sub;
-    cout << fp(2, 1) << endl;
 }
