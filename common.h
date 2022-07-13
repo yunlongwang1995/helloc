@@ -8,28 +8,41 @@
 #endif //HELLOC_COMMON_H
 
 #include <iostream>
+
 using namespace std;
 
 class Animal {
 public:
-    virtual void sayHello() = 0;
+  virtual void sayHello() = 0;
 };
 
 class Dog : public Animal {
 public:
-    void sayHello() override {
-        cout << "wangwang...: " << this->name << endl;
-    }
+  void sayHello() override {
+    cout << "wangwang...: " << this->name << endl;
+  }
 
-    Dog(string name) {
-        this->name = name;
-        cout << "dog construction: " << this->name << endl;
-    }
+  Dog(string name) {
+    this->name = name;
+    cout << "dog construction: " << this->name << endl;
+  }
 
-    ~Dog() {
-        cout << "dog deconstruction :" << this->name << endl;
-    }
+  ~Dog() {
+    cout << "dog deconstruction :" << this->name << endl;
+  }
 
 public:
-    string name;
+  string name;
+};
+
+struct TreeNode {
+  int val;
+  TreeNode* left;
+  TreeNode* right;
+
+  TreeNode() : val(0), left(nullptr), right(nullptr) {}
+
+  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+
+  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
