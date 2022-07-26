@@ -8,7 +8,7 @@ add_executable(right_val_ref 1_4_right_val_ref.cc)
 add_executable(less_greater 1_5_less_greater.cc)
 
 add_executable(lambda 2_1_lambda.cc)
-add_executable(smart_point 2_2_smart_point.cc)
+add_executable(smart_point 3_1_smart_point.cc)
 
 add_executable(size_of 8_1_sizeof.cc)
 add_executable(two_dimensional_array 8_2_two_dimensional_array.cc)
