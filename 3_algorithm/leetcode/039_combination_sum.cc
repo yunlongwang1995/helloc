@@ -13,44 +13,50 @@
 using namespace std;
 
 vector<vector<int>> res;
-void dfs(vector<int>& candidates, int target, int n, int tmpSum, vector<int>& tmp) {
-    if (tmpSum > target) {
-        tmp.pop_back();
-        return;
-    }
-    if (tmpSum == target) {
-        vector<int> r = tmp;
-        res.emplace_back(r);
-        tmp.pop_back();
-        return;
-    }
 
-    for (int i=n; i<candidates.size(); ++i) {
-        if (tmpSum+candidates[i] > target) {
-            break;
-        }
-        tmp.push_back(candidates[i]);
-        dfs(candidates, target, i, tmpSum+candidates[i], tmp);
+void dfs(vector<int>& candidates, int target, int n, int tmpSum, vector<int>& tmp) {
+
+  // 基准条件
+  if (tmpSum > target) {
+    tmp.pop_back();
+    return;
+  }
+  if (tmpSum == target) {
+    vector<int> r = tmp;
+    res.emplace_back(r);
+    tmp.pop_back();
+    return;
+  }
+
+  // 遍历递归
+  for (int i = n; i < candidates.size(); ++i) {
+    if (tmpSum + candidates[i] > target) {
+      break;
     }
-    if (!tmp.empty()) {
-        tmp.pop_back();
-    }
+    tmp.push_back(candidates[i]);
+    dfs(candidates, target, i, tmpSum + candidates[i], tmp);
+  }
+
+  // 回溯
+  if (!tmp.empty()) {
+    tmp.pop_back();
+  }
 }
 
 vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-    std::sort(candidates.begin(), candidates.end());
-    vector<int> tmp;
-    dfs(candidates, target, 0, 0, tmp);
-    return res;
+  std::sort(candidates.begin(), candidates.end());
+  vector<int> tmp;
+  dfs(candidates, target, 0, 0, tmp);
+  return res;
 }
 
 int main() {
-    vector<int> candidate = {2};
-    vector<vector<int>> res = combinationSum(candidate, 1);
-    for (auto item: res) {
-        for (auto item1: item) {
-            cout << item1 << " ";
-        }
-        cout << endl;
+  vector<int> candidate = {2};
+  vector<vector<int>> res = combinationSum(candidate, 1);
+  for (auto item: res) {
+    for (auto item1: item) {
+      cout << item1 << " ";
     }
+    cout << endl;
+  }
 }

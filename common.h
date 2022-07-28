@@ -2,12 +2,17 @@
 // Created by wangyunlong01 on 2022/7/1.
 //
 
+#pragma once
+
 #ifndef HELLOC_COMMON_H
 #define HELLOC_COMMON_H
 
 #endif //HELLOC_COMMON_H
 
 #include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
@@ -48,6 +53,6 @@ struct TreeNode {
 };
 
 struct LNode {
-    int val;
-    LNode* next;
+  int val;
+  LNode* next;
 };
