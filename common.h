@@ -10,8 +10,12 @@
 #endif //HELLOC_COMMON_H
 
 #include <iostream>
+
+#include <array>
 #include <vector>
+#include <queue>
 #include <unordered_map>
+
 #include <algorithm>
 
 using namespace std;
