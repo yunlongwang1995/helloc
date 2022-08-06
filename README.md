@@ -1,23 +1,17 @@
-### <font color=green>数据结构</font>
-#### 队列（优先）
-1_stl / 4_1_queue.cc
-#### 栈
-1_stl / 4_3_stack.cc
-#### 二叉树
-2_data_struct / 2_1_binary_tree.cc
-#### 堆
-2_data_struct / 3_1_heap.cc
-#### 图
-2_data_struct / 4_1_graph.cc
+### <font color=green>1.算法</font>
+#### <font color=orange>链表</font>
+```
 
-### <font color=green>算法</font>
-#### 快排
-3_algorithm / 01_quick_sort.cc
-#### 合并排序
-3_algorithm / 02_merge_sort.cc
 
-### <font color=green>Leetcode</font>
-#### 动态规划
+```
+
+#### <font color=orange>搜索树</font>
+```
+
+
+```
+
+#### <font color=orange>动态规划</font>
 ```
 // 一维,保证 dp[i-1] ==> dp[i]
 // 二维,保证 dp[i+1][j-1] ==> dp[i][j]
@@ -27,11 +21,8 @@
 - 第72题， 编辑距离。    (dp[i][j])
 - 第115题，不同子序列。　（也可以转换一下，用回溯）
 ```
-#### 递归
-```
-- 第44题， 通配符匹配。　（遇到递归时，需要多考虑一下）
-```
-#### 回溯
+
+#### <font color=orange>回溯</font>
 ```
 void dfs(params) {
     // 基准情况
@@ -52,4 +43,36 @@ void dfs(params) {
 第51题，n 皇后。
 第78题，子集。
 第79题，单词搜索。
+```
+#### #### <font color=orange>递归</font>
+```
+- 第44题， 通配符匹配。　（遇到递归时，需要多考虑一下）
+```
+
+#### #### <font color=orange>其他</font>
+```
+快排:               3_algorithm / 01_quick_sort.cc
+归并排序：           3_algorithm / 02_merge_sort.cc
+广度优先（BFS）:
+深度优先（DFS）:
+
+```
+
+### <font color=green>2.数据结构</font>
+#### <font color=orange>队列与栈</font>
+```
+1_stl / 4_1_queue.cc
+1_stl / 4_3_stack.cc
+
+```
+
+#### <font color=orange>树与堆</font>
+```
+2_data_struct / 2_1_binary_tree.cc
+2_data_struct / 3_1_heap.cc
+```
+
+#### <font color=orange>图</font>
+```
+2_data_struct / 4_1_graph.cc
 ```
