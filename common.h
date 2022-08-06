@@ -13,7 +13,8 @@
 
 #include <array>
 #include <vector>
-#include <queue>
+#include <queue>          // 优先队列（堆）
+#include <stack>
 #include <unordered_map>
 
 #include <algorithm>
@@ -44,6 +45,19 @@ public:
   string name;
 };
 
+// 链表节点
+struct ListNode {
+  int val;
+  ListNode* next;
+
+  ListNode() : val(0), next(nullptr) {}
+
+  ListNode(int x) : val(x), next(nullptr) {}
+
+  ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
+
+// 树节点
 struct TreeNode {
   int val;
   TreeNode* left;
@@ -56,7 +70,3 @@ struct TreeNode {
   TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-struct LNode {
-  int val;
-  LNode* next;
-};

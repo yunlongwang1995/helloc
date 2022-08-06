@@ -38,3 +38,5 @@ add_executable(hasPathSum leetcode/112_hasPathSum.cc)
 add_executable(numDistinct leetcode/115_numDistinct.cc)
 add_executable(minimumTotal leetcode/120_minimumTotal.cc)
 add_executable(removeRepeatedNum leetcode/121_removeRepeatedNum.cc)
+
+add_executable(reverseList leetcode/206_reverseList.cc)
