@@ -7,10 +7,47 @@
 
 #include "../../common.h"
 
-TreeNode* sortedListToBST(ListNode* head) {
+TreeNode* helper(vector<ListNode*>& list, int begin, int end) {
+  // 基准
+  if (begin >= end) {
+    return nullptr;
+  }
+  if (begin + 1 == end) {
+    return new TreeNode(list[begin]->val);
+  }
 
+  int mid = (begin + end) / 2;
+  TreeNode* root = new TreeNode(list[mid]->val);
+  root->left = helper(list, begin, mid);
+  root->right = helper(list, mid+1, end);
+
+  return root;
+}
+
+TreeNode* sortedListToBST(ListNode* head) {
+  if (head == nullptr) {
+    return nullptr;
+  }
+
+  vector<ListNode*> list;
+  while (head) {
+    list.emplace_back(head);
+    head = head->next;
+  }
+
+  return helper(list, 0, list.size());
 }
 
 int main() {
+  ListNode n1(-10);
+  ListNode n2(-3);
+  ListNode n3(0);
+  ListNode n4(5);
+  ListNode n5(9);
+  n1.next = &n2;
+  n2.next = &n3;
+  n3.next = &n4;
+  n4.next = &n5;
 
+  sortedListToBST(&n1);
 }
