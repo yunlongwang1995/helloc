@@ -15,8 +15,33 @@
 
 #include "../../common.h"
 
-void recoverTree(TreeNode* root) {
+TreeNode* cur;
+TreeNode* pre;
+TreeNode* t1;
+TreeNode* t2;
 
+void inorder(TreeNode* root) {
+  if (root == nullptr) {
+    return;
+  }
+
+  inorder(root->left);
+  pre = cur;
+  cur = root;
+  if (pre && pre->val > cur->val) {
+    if (t1 == nullptr) {
+      t1 = pre;
+      t2 = cur;
+    } else {
+      t2 = cur;
+    }
+  }
+  inorder(root->right);
+}
+
+void recoverTree(TreeNode* root) {
+  inorder(root);
+  swap(t1->val, t2->val);
 }
 
 int main() {

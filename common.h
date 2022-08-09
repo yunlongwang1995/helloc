@@ -17,13 +17,19 @@
 #include <stack>
 #include <unordered_map>
 
+#include <memory>
+
 #include <algorithm>
+#include <thread>
+#include <chrono>
 
 using namespace std;
 
 class Animal {
 public:
   virtual void sayHello() = 0;
+
+  virtual ~Animal() {};
 };
 
 class Dog : public Animal {

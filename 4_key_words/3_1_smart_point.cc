@@ -9,16 +9,12 @@
  */
 
 #include "../common.h"
-#include <memory>
 
 int main(int argc, char **argv) {
   shared_ptr<Animal> sAnimal;
 
   Dog* dog = new Dog("111");
-  cout << "----" << endl;
   sAnimal.reset(dog);
-//  delete dog;
-  cout << "----" << endl;
   if (sAnimal.get()) {
     cout << "sAnimal not null" << endl;
   } else {
