@@ -8,17 +8,18 @@
 using namespace std;
 
 void printNum(int num) {
-    cout << "threadID: "<< this_thread::get_id() << ", num: " << num << endl;
-    this_thread::yield();   // 让出时间片
-    this_thread::sleep_for(std::chrono::seconds(1));  // Sleep 1s
+  cout << "threadID: " << this_thread::get_id() << ", num: " << num << endl;
+  this_thread::yield();   // 让出时间片
+  this_thread::sleep_for(std::chrono::seconds(1));  // Sleep 1s
 }
 
 int main() {
-    thread t1(printNum, 1000);
-    thread t2(printNum, 2000);
-    t1.join();        // 主线程等待
-    t2.detach();      // 与主县城分离
+  std::thread threads[2];
+  threads[0] = thread(printNum, 1000);
+  threads[1] = thread(printNum, 2000);
+  threads[0].join();        // 主线程等待
+  threads[1].detach();      // 与主线程分离
 
-    cout << "main thread：" << this_thread::get_id() << endl;
-    this_thread::sleep_for(chrono::seconds(2));
+  cout << "main thread：" << this_thread::get_id() << endl;
+  this_thread::sleep_for(chrono::seconds(2));
 }
