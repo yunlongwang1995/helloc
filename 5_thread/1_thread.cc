@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <thread>
+#include <vector>
 
 using namespace std;
 
@@ -15,10 +16,12 @@ void printNum(int num) {
 
 int main() {
   std::thread threads[2];
-  threads[0] = thread(printNum, 1000);
-  threads[1] = thread(printNum, 2000);
-  threads[0].join();        // 主线程等待
-  threads[1].detach();      // 与主线程分离
+//  std::vector<std::thread> threads;
+  {
+    thread(printNum, 1000).detach();
+  }
+//  threads[0].join();        // 主线程等待
+//  threads[0].detach();      // 与主线程分离
 
   cout << "main thread：" << this_thread::get_id() << endl;
   this_thread::sleep_for(chrono::seconds(2));

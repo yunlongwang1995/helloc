@@ -3,50 +3,24 @@
 //
 
 #include "stopper.h"
-#include <thread>
+#include <iostream>
 
-enum TaskStatus {
-  Reading,
-  Running,
-  Done
-};
+int main() {
+  Task task1 = [](std::vector<int>& list) {
+    std::cout << "this is task1" << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    list.emplace_back(1);
+  };
 
-class Stopper {
-public:
-  Stopper(int thread_num, int exec_time) : thread_num_(thread_num),
-                                           exec_time_(exec_time) {
-    running_ = Reading;
-    running_thread_num_ = 0;
-    has_executed_time_ = 0;
-  }
+  Task task2 = [](std::vector<int>& list) {
+    std::cout << "this is task2" << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    list.emplace_back(2);
+  };
 
-  ~Stopper() {}
-
-  void Run(void f()) {
-    running_ = Running;
-    for (int i = 0; i < thread_num_; ++i) {
-      running_thread_num_++;
-      std::thread([&]() {
-        while (running_ != Done) {
-          f();
-        }
-        running_thread_num_--;
-      }).detach();
-    }
-
-    while (running_thread_num_ > 0) {
-      std::this_thread::sleep_for(std::chrono::seconds(1));
-      has_executed_time_++;
-      if (has_executed_time_ > exec_time_) {
-        running_ = Done;
-      }
-    }
-  }
-
-private:
-  int thread_num_;
-  int exec_time_;
-  TaskStatus running_;
-  int running_thread_num_;
-  int has_executed_time_;
-};
+  Stopper stopper;
+  stopper.RunTask(task1);
+  stopper.RunAsyncTask(task2);
+  stopper.WaitTask(5);
+  stopper.PrintStatistics();
+}
