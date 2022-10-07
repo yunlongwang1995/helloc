@@ -1,1 +1,0 @@
-add_executable(static_lib static_lib_test.cc)
