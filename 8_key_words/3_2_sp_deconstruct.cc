@@ -13,15 +13,7 @@
 int main(int argc, char **argv) {
   cout << "begin..." << endl;
   {
-//    unique_ptr<Animal> sAnimal;
-//    Dog* dog = new Dog("111");
-//    sAnimal.reset(dog);
-//    sAnimal->sayHello();
-//    sAnimal = nullptr;
-//    delete dog;
 
-      unique_ptr<Animal> dog = make_unique<Dog>("111");
-      dog->sayHello();
   }
 
   cout << "end..." << endl;

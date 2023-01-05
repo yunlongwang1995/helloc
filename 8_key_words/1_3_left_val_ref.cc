@@ -2,7 +2,6 @@
 // Created by wangyunlong01 on 2022/6/22.
 //
 #include <iostream>
-#include "common.h"
 using namespace std;
 class LPerson {
 public:

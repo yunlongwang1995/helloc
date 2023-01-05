@@ -1,7 +1,6 @@
-add_executable(assert 01_assert.cc)
+file(GLOB_RECURSE KEY_WORDS_SRCS *.cc)
 
-add_executable(random_string 11_random_string.cc)
-add_executable(time_clock 12_time_clock.cc)
-
-add_subdirectory(cache)
-add_subdirectory(stopper)
+foreach(sourcefile ${KEY_WORDS_SRCS})
+    get_filename_component(exename ${sourcefile} NAME_WE)
+    add_executable(${exename} ${sourcefile})
+endforeach()

@@ -2,7 +2,7 @@
 // Created by wangyunlong01 on 2022/7/1.
 //
 
-#include "common.h"
+#include "../base.h"
 
 void hello(int n, bool **matrix) {
     matrix[n - 1][n] = true;
