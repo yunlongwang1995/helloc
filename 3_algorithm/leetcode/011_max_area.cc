@@ -11,7 +11,20 @@
 using namespace std;
 
 int maxArea(vector<int>& height) {
+    int res = 0;
+    int left = 0;
+    int right = height.size() - 1;
+    while (left < right) {
+        if (height[left] < height[right]) {
+            res = max(res, (right - left) * height[left]);
+            ++left;
+        } else {
+            res = max(res, (right - left) * height[right]);
+            --right;
+        }
+    }
 
+    return res;
 }
 
 int main() {

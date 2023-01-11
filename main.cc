@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     std::cout << "hello program crash!!!" << std::endl;
     std::cout << "sudo service apport stop" << std::endl;
     std::cout << "ulimit -c unlimited" << std::endl;
-    std::cout << 100/(argc-3) << std::endl;
+    std::cout << 100/(argc-4) << std::endl;
     return 0;
   }
 
