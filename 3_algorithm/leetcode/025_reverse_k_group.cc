@@ -8,6 +8,38 @@
 
 using namespace std;
 
+/**
+ * 反转链表解析(方法1　只有头节点)
+ * @param head
+ * 1 2 3 4 5
+ * 1
+ * 1 2
+ * 1 3 2
+ * 1 4 3 2
+ * 1 5 4 3 2
+ * 5 4 3 2 1
+ *
+ * 或者（使用一个临时节点）
+ * t 1
+ * t 2 1
+ * t 3 2 1
+ * t 4 3 2 1
+ * t 5 4 3 2 1
+ * 5 4 3 2 1
+ */
+
+/**
+ * 反转链表解析(方法2　有头尾节点)
+ * @param head
+ * @param tail
+ * 1 2 3 4 5
+ * 5
+ * 5 1
+ * 5 2 1
+ * 5 3 2 1
+ * 5 4 3 2 1
+ */
+
 void reverseGroup(ListNode* head, ListNode* tail) {
   ListNode* cur = head;   // 当前遍历的节点
   ListNode* next;         // 下一个遍历的节点
