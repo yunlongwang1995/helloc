@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 int lengthOfLongestSubstring(string s) {
@@ -15,18 +16,18 @@ int lengthOfLongestSubstring(string s) {
 
     // 声明局部变量，一定要初始化
     int hash[128];
-    for (int i=0; i<128; i++) {
+    for (int i = 0; i < 128; i++) {
         hash[i] = -1;
     }
 
     int maxLength = 0;
     int temp = 0;
-    for (int i=0; i<s.length(); i++) {
+    for (int i = 0; i < s.length(); i++) {
         char item = s.at(i);
         if (hash[item] == -1) {
             temp++;
         } else {
-            temp = min(i - hash[item], temp+1);
+            temp = min(i - hash[item], temp + 1);
         }
         hash[item] = i;
         if (temp > maxLength) {
