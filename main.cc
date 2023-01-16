@@ -8,6 +8,7 @@
 
 void mock_self_deadlock();
 void mock_deadlock();
+void cal();
 
 /**
  * 入门用例
@@ -18,6 +19,9 @@ void mock_deadlock();
 int main(int argc, char* argv[]) {
 
   if (argc == 1) {
+    for (int i=0; i<200; ++i) {
+      cal();
+    }
     std::cout << "hello c++ world" << std::endl;
     return 0;
   }
@@ -97,4 +101,9 @@ void mock_deadlock() {
   std::thread t1(get_b_a);
   get_a_b();
   t1.join();
+}
+void cal() {
+  for (int i=0; i<100; ++i) {
+    usleep(100);
+  }
 }
