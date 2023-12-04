@@ -5,7 +5,7 @@
  *
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 vector<TreeNode*> res1;
 vector<TreeNode*>* helper(int begin, int end) {

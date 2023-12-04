@@ -2,13 +2,8 @@
 // Created by wangyunlong01 on 2022/4/12.
 //
 #include <iostream>
-#include <mutex>
-#include <unistd.h>
-#include <thread>
-
-void mock_self_deadlock();
-void mock_deadlock();
-void cal();
+#include <string.h>
+#include <string>
 
 /**
  * 入门用例
@@ -16,94 +11,78 @@ void cal();
  * @param argv 　　参数列表 ./main hello 123
  * @return
  */
+
+using namespace std;
+
+void c_string_test()
+{
+  char* name = "hello c";
+  printf("%s len: %d\n", name, strlen(name));
+}
+
+void cpp_string_test()
+{
+  string city = "jinan";
+  string c2 = city;
+  city = "beijing";
+  printf("city = %s, c2 = %s\n", city.data(), c2.data());
+}
+
+typedef struct node {
+  int val;
+  node* next;
+} node;
+
+node* reverse(node* head) {
+  if (head == NULL) {
+    return NULL;
+  }
+
+  node* current = head;
+  node* next = current->next;
+  current->next = NULL;
+
+  while (next) {
+    node* old_current = current;
+    node* old_next = next;
+    current = next;
+    next = current->next;
+    old_next->next = old_current;
+  }
+
+  return current;
+}
+
+void reverse_list_test() {
+  node* n1 = new node();
+  node* n2 = new node();
+  node* n3 = new node();
+  node* n4 = new node();
+
+  n1->val = 1;
+  n2->val = 2;
+  n3->val = 3;
+  n4->val = 4;
+
+  n1->next = n2;
+  n2->next = n3;
+  n3->next = n4;
+  n4->next = NULL;
+
+  node* res = reverse(n1);
+  while (res != NULL) {
+    printf("%d    ", res->val);
+    res = res->next;
+  }
+  printf("\n");
+}
+
 int main(int argc, char* argv[]) {
+  // c string test
+  c_string_test();
 
-  if (argc == 1) {
-    for (int i=0; i<200; ++i) {
-      cal();
-    }
-    std::cout << "hello c++ world" << std::endl;
-    return 0;
-  }
+  // c++ string test
+  cpp_string_test();
 
-  if (argc == 2) {
-    std::cout << "hello program self deadlock!!!" << std::endl;
-    mock_self_deadlock();
-    return 0;
-  }
-
-  if (argc == 3) {
-    std::cout << "hello program deadlock!!!" << std::endl;
-    mock_deadlock();
-    return 0;
-  }
-
-  if (argc == 4) {
-    std::cout << "hello program crash!!!" << std::endl;
-    std::cout << "sudo service apport stop" << std::endl;
-    std::cout << "ulimit -c unlimited" << std::endl;
-    std::cout << 100/(argc-4) << std::endl;
-    return 0;
-  }
-
-  if (argc == 5) {
-    std::cout << "hello memory leak!!!" << std::endl;
-    std::cout << "valgrind --tool=memcheck --leak-check=full ./main hello 1 3" << std::endl;
-    int* p = new int(88);
-    std::cout << "my leak ptr: " << *p << std::endl;
-    return 0;
-  }
-}
-
-std::mutex mutex_a;
-std::mutex mutex_b;
-
-void get_a_b() {
-  mutex_a.lock();
-  std::cout << "get_a_b: get resource a" << std::endl;
-  sleep(3);
-
-  mutex_b.lock();
-  std::cout << "get_a_b: get resource b" << std::endl;
-  sleep(3);
-
-  mutex_b.unlock();
-  mutex_a.unlock();
-}
-void get_b_a() {
-  mutex_b.lock();
-  std::cout << "get_b_a: get resource b" << std::endl;
-  sleep(3);
-
-  mutex_a.lock();
-  std::cout << "get_b_a: get resource a" << std::endl;
-  sleep(3);
-
-  mutex_a.unlock();
-  mutex_b.unlock();
-}
-
-void mock_self_deadlock() {
-  std::mutex mutex;
-
-  mutex.lock();
-  std::cout << "get lock" << std::endl;
-  sleep(1);
-
-  mutex.lock();
-  std::cout << "get lock again" << std::endl;
-  sleep(1);
-
-  mutex.unlock();
-  mutex.unlock();
-}
-void mock_deadlock() {
-  std::thread t1(get_b_a);
-  get_a_b();
-  t1.join();
-}
-void cal() {
-  for (int i=0; i<100; ++i) {
-    usleep(100);
-  }
+  reverse_list_test();
 }

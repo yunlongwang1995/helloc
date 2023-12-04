@@ -4,7 +4,7 @@
  * 如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 using namespace std;
 

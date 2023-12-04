@@ -4,7 +4,7 @@
  *
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 bool isSymmetricHelp(TreeNode *left, TreeNode *right) {
     if (left == nullptr && right == nullptr) {

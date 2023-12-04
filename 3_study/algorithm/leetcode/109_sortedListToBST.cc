@@ -5,7 +5,7 @@
  *
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 TreeNode* helper(vector<ListNode*>& list, int begin, int end) {
   // 基准

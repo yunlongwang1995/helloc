@@ -4,7 +4,7 @@
  *
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 ListNode *removeRepeatedNum(ListNode *head) {
     if (head == nullptr) {

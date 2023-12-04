@@ -9,7 +9,7 @@
 #include <string>
 #include <queue>
 #include <algorithm>
-#include "../../base.h"
+#include "../../../base.h"
 
 /**
  * dp[i][j] 代表在(i,j)位置的最小数和

@@ -13,7 +13,7 @@
  * 思路：中序遍历是排序的
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 TreeNode* cur;
 TreeNode* pre;

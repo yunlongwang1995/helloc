@@ -4,7 +4,7 @@
  * 两个字符串，立即想动态规划
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 bool isInterleave(string s1, string s2, string s3) {
     auto m = s1.length();

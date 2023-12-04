@@ -10,7 +10,7 @@
  * 解释：342 + 465 = 807.
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 class Solution {
 public:

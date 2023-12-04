@@ -6,7 +6,7 @@
  * 输出：5
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 //int helper(int begin, int end) {
 //  // 基准

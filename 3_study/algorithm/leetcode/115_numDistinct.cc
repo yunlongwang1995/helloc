@@ -5,7 +5,7 @@
  *
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 int numDistinct(string s, string t) {
 

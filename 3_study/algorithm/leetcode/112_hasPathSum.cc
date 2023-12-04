@@ -4,7 +4,7 @@
  *
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 bool hasPathSum(TreeNode* root, int targetSum) {
   if (root == nullptr) {

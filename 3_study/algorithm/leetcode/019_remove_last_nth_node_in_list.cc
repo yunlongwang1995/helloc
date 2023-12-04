@@ -3,7 +3,7 @@
  *
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 ListNode* removeNthFromEnd(ListNode *head, int n) {
     // 只有一个节点

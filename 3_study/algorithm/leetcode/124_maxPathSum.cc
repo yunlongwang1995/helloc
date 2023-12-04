@@ -15,7 +15,7 @@
  *   - root + left + right
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 int ret = INT32_MIN;
 int getMax(TreeNode* root) {

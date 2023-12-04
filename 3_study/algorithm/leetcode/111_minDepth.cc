@@ -9,7 +9,7 @@
 #include <string>
 #include <queue>
 #include <algorithm>
-#include "../../base.h"
+#include "../../../base.h"
 
 int minDepth(TreeNode* root) {
     if (root == nullptr) {

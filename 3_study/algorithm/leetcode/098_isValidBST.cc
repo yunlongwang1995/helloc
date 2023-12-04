@@ -7,7 +7,7 @@
  * 所有左子树和右子树自身必须也是二叉搜索树。
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 bool isValidBST(TreeNode *root) {
     // 基准条件

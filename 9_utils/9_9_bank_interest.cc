@@ -33,9 +33,14 @@ int main() {
 //    int num_of_issues = 29 * 12;
 
     // 假设 2023.05.04 提前还款 40w
-    double total_loans = (122 - 3 - 40) * 10000;
-    double interest_rate = 5.05 * 0.01 / 12;
-    int num_of_issues = 29 * 12 - 9;
+//    double total_loans = (122 - 3 - 40) * 10000;
+//    double interest_rate = 5.05 * 0.01 / 12;
+//    int num_of_issues = 29 * 12 - 9;
+
+    // 假设 2024.11.11
+    double total_loans = 768000;
+    double interest_rate = 3.55 * 0.01 / 12;
+    int num_of_issues = 360 - 39;
 
     double res = CalPayPerIssue(total_loans, interest_rate, num_of_issues);
     std::cout << "每月还款：" << res << std::endl;

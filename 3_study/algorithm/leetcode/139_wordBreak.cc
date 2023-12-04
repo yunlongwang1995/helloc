@@ -4,7 +4,7 @@
  * 注意：不要求字典中出现的单词全部都使用，并且字典中的单词可以重复使用。
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 bool dfs(const string& s, const unordered_map<string, bool>& dict, int startIndex) {
   // 基准情况

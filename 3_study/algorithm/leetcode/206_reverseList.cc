@@ -8,7 +8,7 @@
  * 输出：[]
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 ListNode* reverseList(ListNode* head) {
   if (head == nullptr || head->next == nullptr) {

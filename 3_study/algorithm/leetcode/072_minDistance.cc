@@ -24,7 +24,7 @@
  * 再插入一个字符 word2[j], word1[0..i] 就完全变成了 word2[0..j] 了。
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 using namespace std;
 

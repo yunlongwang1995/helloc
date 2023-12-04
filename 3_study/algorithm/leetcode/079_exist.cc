@@ -6,7 +6,7 @@
  * 其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。
  */
 
-#include "../../base.h"
+#include "../../../base.h"
 
 bool dfs(vector<vector<char>>& board, string& word,
          int size, int x, int y, vector<vector<int>>& f) {
