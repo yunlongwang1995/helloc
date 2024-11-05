@@ -39,7 +39,7 @@ int main() {
 
     // 假设 2024.11.11
     double total_loans = 768000;
-    double interest_rate = 3.55 * 0.01 / 12;
+    double interest_rate = 3.3 * 0.01 / 12;
     int num_of_issues = 360 - 39;
 
     double res = CalPayPerIssue(total_loans, interest_rate, num_of_issues);

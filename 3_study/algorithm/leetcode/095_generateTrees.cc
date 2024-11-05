@@ -7,44 +7,35 @@
 
 #include "../../../base.h"
 
-vector<TreeNode*> res1;
-vector<TreeNode*>* helper(int begin, int end) {
+vector<TreeNode*> helper(int begin, int end) {
   // 基准
-  if (begin < end) {
-    return nullptr;
+  if (begin > end) {
+    return {NULL};
   }
   vector<TreeNode*> list;
-  if (begin == end) {
-    list.emplace_back(new TreeNode(begin));
-    return &list;
-  }
-
   // 遍历递归
   for (int i=begin; i<=end; ++i) {
     auto subLeft = helper(begin, i-1);
     auto subRight = helper(i+1, end);
-    if (subLeft == nullptr) {
-      for (auto item: *subRight) {
+    for (auto litem : subLeft) {
+      for (auto ritem: subRight) {
         TreeNode* root = new TreeNode(i);
-        root->right = item;
-      }
-    }
-
-
-    for (auto l: *subLeft) {
-      for (auto r : *subRight) {
-        TreeNode* root = new TreeNode(i);
-        root->left = l;
-        root->right = r;
+        root->left = litem;
+        root->right = ritem;
+        list.push_back(root);
       }
     }
   }
+  return list;
 }
 
 vector<TreeNode*> generateTrees(int n) {
-  return *helper(1, n);
+  if (n < 1) {
+    return {};
+  }
+  return helper(1, n);
 }
 
 int main() {
-
+  generateTrees(3);
 }

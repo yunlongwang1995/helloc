@@ -15,35 +15,64 @@
 
 #include "../../../base.h"
 
-TreeNode* cur;
-TreeNode* pre;
-TreeNode* t1;
-TreeNode* t2;
-
-void inorder(TreeNode* root) {
-  if (root == nullptr) {
+void midorder(TreeNode* root, vector<TreeNode*>* array) {
+  // 基准
+  if (root == NULL) {
+    return;
+  }
+  if (root->left == NULL && root->right == NULL) {
+    array->push_back(root);
     return;
   }
 
-  inorder(root->left);
-  pre = cur;
-  cur = root;
-  if (pre && pre->val > cur->val) {
-    if (t1 == nullptr) {
-      t1 = pre;
-      t2 = cur;
-    } else {
-      t2 = cur;
-    }
-  }
-  inorder(root->right);
+  // 非基准
+  midorder(root->left, array);
+  array->push_back(root);
+  midorder(root->right, array);
 }
 
 void recoverTree(TreeNode* root) {
-  inorder(root);
-  swap(t1->val, t2->val);
+  if (root == NULL) {
+    return;
+  }
+  vector<TreeNode*> array;
+  midorder(root, &array);
+  TreeNode* first = NULL;
+  TreeNode* first_next = NULL;
+  TreeNode* second = NULL;
+  TreeNode* pre = NULL;
+
+  for (auto cur : array) {
+    if (pre == NULL) {
+      pre = cur;
+      continue;
+    }
+    if (pre->val >= cur->val) {
+      if (first == NULL) {
+        first = pre;
+        first_next = cur;
+      } else {
+        second = cur;
+        break;
+      }
+    }
+    pre = cur;
+  }
+
+  if (second != NULL) {
+    swap(first->val, second->val);
+  } else {
+    swap(first->val, first_next->val);
+  }
 }
 
 int main() {
+  TreeNode* n1 = new TreeNode(1);
+  TreeNode* n2 = new TreeNode(2);
+  TreeNode* n3 = new TreeNode(3);
 
+  n1->left = n3;
+  n3->right = n2;
+
+  recoverTree(n1);
 }
