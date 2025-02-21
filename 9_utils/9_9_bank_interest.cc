@@ -37,7 +37,7 @@ int main() {
 //    double interest_rate = 5.05 * 0.01 / 12;
 //    int num_of_issues = 29 * 12 - 9;
 
-    // 假设 2024.11.11
+    // 假设 2025.11.11
     double total_loans = 600000;
     double interest_rate = 3.0 * 0.01 / 12;
     int num_of_issues = 360 - 52;
